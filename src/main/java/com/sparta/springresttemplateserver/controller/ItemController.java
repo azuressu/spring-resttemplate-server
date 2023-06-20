@@ -36,6 +36,7 @@ public class ItemController {
 
     @PostMapping("/exchange-call") // Post
     public ItemResponseDto exchangeCall(@RequestHeader("X-Authorization") String token, @RequestBody UserRequestDto requestDto) {
+        // Header에 X-Authorization으로 key를 넣어주었으므로 받아올 때도 똑같이 받아옴
         return itemService.exchangeCall(token, requestDto);
     }
 }
