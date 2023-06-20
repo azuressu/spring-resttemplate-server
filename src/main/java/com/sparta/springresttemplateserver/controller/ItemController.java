@@ -29,12 +29,12 @@ public class ItemController {
         return itemService.getCallList();
     }
 
-    @GetMapping("/post-call/{query}")
+    @PostMapping("/post-call/{query}") // Post
     public Item postCall(@PathVariable String query, @RequestBody UserRequestDto requestDto) {
         return itemService.postCall(query, requestDto);
     }
 
-    @GetMapping("/exchange-call")
+    @PostMapping("/exchange-call") // Post
     public ItemResponseDto exchangeCall(@RequestHeader("X-Authorization") String token, @RequestBody UserRequestDto requestDto) {
         return itemService.exchangeCall(token, requestDto);
     }
